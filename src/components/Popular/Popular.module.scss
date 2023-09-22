@@ -1,0 +1,12 @@
+@import "variables";
+
+.popularContainer {
+
+  .movieContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    gap: 20px;
+  }
+  }     
+  
+  

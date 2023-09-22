@@ -1,0 +1,19 @@
+
+@import "variables";
+
+.container {
+    .input {
+    min-width: 300px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    }
+    .input::placeholder{
+        color: $light-peps;
+    }
+    .input:focus::placeholder {
+        color: transparent;
+    }
+}

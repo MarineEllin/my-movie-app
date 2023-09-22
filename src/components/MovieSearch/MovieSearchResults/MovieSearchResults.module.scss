@@ -1,0 +1,38 @@
+@import "variables";
+
+.searchResults {
+  position: absolute;
+  z-index: 3;
+  background-color: $white;
+  top: 85px;
+  padding: 10px;
+  box-shadow: $box-shadow;
+  font-family: var(--font-montserrat);
+  border-radius: $border-radius;
+
+  > div > a {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid $light-peps;
+
+    &:hover {
+      p {
+        color: $peps;
+      }
+    }
+
+    img {
+      box-shadow: $box-shadow;
+      width: auto;
+      height: auto;
+    }
+
+    p {
+      margin-left: 10px;
+      color: $dark-grey;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}

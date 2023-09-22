@@ -1,0 +1,46 @@
+@import "variables";
+
+.header {
+    color: $primary;
+    font-family: var(--font-roboto);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    padding: 0 20px;
+
+    .logo{
+        font-weight: 700;
+        font-size: 32px;
+        color: $peps;
+    }
+
+    .navigation{
+        display: flex;
+        justify-content: flex-end;
+        flex: 0.5;
+        gap: 20px;
+        
+        nav {
+            ul{
+                list-style: none;
+                display: flex;
+                gap: 20px;
+                li {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+    }
+    .accountIcon{
+        color: $peps;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}

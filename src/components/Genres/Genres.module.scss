@@ -1,0 +1,27 @@
+@import "variables";
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+
+    .genre {
+        background-color: $primary;
+        border-radius: $border-radius;
+        color: $white;
+        font-weight: 700;
+        box-shadow: $box-shadow;
+        transition: all 0.8s ease;
+        &:hover {
+            color: $light-peps;
+            padding-left: 15px;
+        }
+    }
+
+
+    p {
+        margin: 0;
+        padding: 10px;
+    }
+}

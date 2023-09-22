@@ -1,0 +1,51 @@
+@import "variables";
+
+.card {
+  font-family: var(--font-montserrat);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  min-width: 250px;
+  .image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    img {
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    padding: 5px 10px;
+    position: relative;
+
+    .vote {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-radius: 50%;
+      top: -20px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
+      z-index: 2;
+      margin: 0;
+      border: 2px solid $light-peps;
+      background-color: $white;
+      box-shadow: $box-shadow;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 5px 0;
+      margin-top: 15px;
+    }
+
+    p {
+      font-size: 11px;
+      font-weight: 300;
+    }
+  }
+}
