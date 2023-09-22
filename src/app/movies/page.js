@@ -1,9 +1,10 @@
 import React from 'react';
+import SearchResults from './(search)/SearchResults';
 
-const MoviesPage = () => {
+const MoviesPage = ({searchParams}) => {
     return (
         <div>
-            
+            <SearchResults searchParams={searchParams}/>
         </div>
     );
 };
