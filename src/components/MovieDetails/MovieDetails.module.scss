@@ -3,7 +3,7 @@
 .movieContainer {
     position: relative;
     width: 100%;
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
         }
     }
      .movieContent {
-        padding: 50px;
+        padding: 20px;
         position: relative;
         z-index: 3;
         display: flex;
@@ -44,11 +44,17 @@
                 color: $light-peps;
             }
             p {
+                font-size: 14px;
                 color: $white;
             }
-            ul>li {
-                color: $white;
+            .overview{
+                font-size: 14px;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
+
 
         }
     }

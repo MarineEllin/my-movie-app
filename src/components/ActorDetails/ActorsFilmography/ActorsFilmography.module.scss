@@ -1,0 +1,29 @@
+@import "variables";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .content {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        .film{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img{
+                transition: all 0.8s;
+                &:hover {
+                    box-shadow: $box-shadow-peps;
+                }
+            }
+            p{
+                text-align: center;
+                max-width: 120px;
+                font-size: 12px;
+            }
+        }
+    }
+}

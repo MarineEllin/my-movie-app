@@ -1,17 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./MovieDetails.module.scss";
 import Image from "next/image";
+import MovieActors from "./MovieActors/MovieActors";
 
 const MovieDetails = ({ movie }) => {
   return (
     <div className={styles.movieContainer}>
       <div className={styles.backgroundContainer}>
-        <Image
-          src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/original${movie.backdrop_path}`}
-          alt={movie.title}
-          fill
-          sizes="100%"
-        />
+        {movie.backdrop_path && (
+          <Image
+            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/original${movie.backdrop_path}`}
+            alt={movie.title}
+            fill
+            sizes="100%"
+          />
+        )}
       </div>
       <div className={styles.movieContent}>
         <div>
@@ -25,9 +28,9 @@ const MovieDetails = ({ movie }) => {
         </div>
         <div className={styles.movieDetails}>
           <h1>{movie.title}</h1>
-          <div lassName={styles.details}>
+          <div className={styles.details}>
             <h3>Synopsis</h3>
-            <p>{movie.overview}</p>
+            <p className={styles.overview}>{movie.overview}</p>
           </div>
           <div className={styles.details}>
             <h3>Date de sortie : </h3>
@@ -38,12 +41,16 @@ const MovieDetails = ({ movie }) => {
             <p>{movie.vote_average.toFixed(1)}</p>
           </div>
           <div className={styles.details}>
-            <h3>Compagnies de production: </h3>
-            <ul>
-              {movie.production_companies.map((comp) => (
-                <li key={comp.id}>{comp.name}</li>
-              ))}
-            </ul>
+            <h3>Compagnies de production : </h3>
+            <p>
+              {movie.production_companies.map((comp) => comp.name).join(", ")}
+            </p>
+          </div>
+          <div className={styles.details}>
+            <h3>Acteurs : </h3>
+            <Suspense fallback={<p>Chargement...</p>}>
+              <MovieActors movieId={movie.id} />
+            </Suspense>
           </div>
         </div>
       </div>

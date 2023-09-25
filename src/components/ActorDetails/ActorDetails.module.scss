@@ -1,0 +1,24 @@
+@import "variables";
+
+.container {
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+    background-color: rgba($color: $dark-grey, $alpha:0.8);
+    height: 60vh;
+    img{
+        object-fit: cover;
+        border-radius: $border-radius;
+    }
+    .biography {
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 28px;
+        color: $white
+    }
+    p {
+        color: $white;
+    }
+}

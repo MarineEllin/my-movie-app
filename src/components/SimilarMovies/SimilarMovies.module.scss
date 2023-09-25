@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    height: 40vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    .movies {
+        display: grid;
+        grid-template-columns: repeat(4, 300px);
+        gap: 20px;
+    }
+}

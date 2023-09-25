@@ -1,0 +1,15 @@
+.container {
+    margin: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    img{
+        border-radius: 50%;
+        object-fit: cover;
+
+    }
+    p {
+        text-align: center;
+        font-size: 12px;
+    }
+}
