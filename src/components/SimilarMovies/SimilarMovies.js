@@ -8,9 +8,12 @@ const SimilarMovies = async ({ movieId }) => {
   return (
     <div className={styles.container}>
       <div className={styles.movies}>
-        {results.slice(0, 4).map((movie) => (
-          <MediaCard media={movie} key={movie.id} />
-        ))}
+        {results
+          .filter((movie) => movie.poster_path)
+          .slice(0, 4)
+          .map((movie) => (
+            <MediaCard media={movie} key={movie.id} />
+          ))}
       </div>
     </div>
   );

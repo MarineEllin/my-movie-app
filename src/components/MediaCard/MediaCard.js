@@ -16,7 +16,7 @@ const MediaCard = ({ media }) => {
           />
         </div>
         <div className={styles.content}>
-          <p className={styles.vote}>{media.vote_average}</p>
+          <p className={styles.vote}>{media.vote_average.toFixed(1)}</p>
           <h2>{media.title}</h2>
           <p>Le {new Date(media.release_date).toLocaleDateString("fr-FR")}</p>
         </div>
