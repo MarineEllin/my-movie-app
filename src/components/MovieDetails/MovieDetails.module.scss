@@ -1,8 +1,9 @@
 @import "variables";
 
 .movieContainer {
+    margin-top: 50px;
     position: relative;
-    width: 100%;
+    min-width: 100vw;
     min-height: 60vh;
     display: flex;
     justify-content: center;
