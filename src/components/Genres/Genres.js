@@ -1,26 +1,27 @@
-import { getMovieByPath } from '@/utils/movieClient';
-import React from 'react';
-import Link from 'next/link';
+import { getMovieByPath } from "@/utils/movieClient";
+import React from "react";
+import Link from "next/link";
 import styles from "./Genres.module.scss";
+import { getDictionary } from "@/utils/dictionaries";
 
+const Genres = async ({ locale }) => {
+  const { genres } = await getMovieByPath("/genre/movie/list", [], locale);
+  const dictionary = await getDictionary(locale);
 
-const Genres = async() => {
-    const { genres } = await getMovieByPath("/genre/movie/list");
-
-    return (
-        <div>
-            <h1>Parcourir par genres</h1>
-            <div className={styles.container}>
-                {genres.map((genre) => (
-                    <div key={genre.id} className={styles.genre}>
-                        <Link href={`/movies/genres/${genre.id}`}>
-                            <p>{genre.name}</p>
-                        </Link>
-                        </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <h1>{dictionary.genres.title}</h1>
+      <div className={styles.container}>
+        {genres.map((genre) => (
+          <div key={genre.id} className={styles.genre}>
+            <Link href={`/movies/genres/${genre.id}`}>
+              <p>{genre.name}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Genres;

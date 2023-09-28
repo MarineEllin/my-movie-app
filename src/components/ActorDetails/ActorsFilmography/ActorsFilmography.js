@@ -3,12 +3,18 @@ import styles from "./ActorsFilmography.module.scss";
 import { getMovieByPath } from "@/utils/movieClient";
 import Link from "next/link";
 import Image from "next/image";
+import { getDictionary } from "@/utils/dictionaries";
 
-const ActorsFilmography = async ({ actorId }) => {
-  const { cast } = await getMovieByPath(`/person/${actorId}/movie_credits`);
+const ActorsFilmography = async ({ actorId, locale }) => {
+  const { cast } = await getMovieByPath(
+    `/person/${actorId}/movie_credits`,
+    [],
+    locale
+  );
+  const dictionary = await getDictionary(locale);
   return (
     <div className={styles.container}>
-      <h2>Films :</h2>
+      <h2>{dictionary.filmo.title}</h2>
       <div className={styles.content}>
         {cast
           .filter((film) => film.poster_path && film.title)

@@ -1,0 +1,40 @@
+{
+  "popular": {
+      "title": "Most popular"
+    },
+  "genres": {
+    "title": "Browse by genres"
+  },
+  "header": {
+    "series" : "Series",
+    "films": "Movies",
+    "search": "Search by title..."
+  },
+  "actor": {
+    "birthdate": "Date of birth",
+    "place_birth": "Place of birth"
+  },
+  "filmo":{
+    "title": "Movies"
+  },
+  "movie":{
+    "releaseDate": "Release Date",
+    "vote": "Rating",
+    "productionCompanies": "Productions companies",
+    "actors": "Actors"
+  },
+  "searchSideBar":{
+    "title": "Filter",
+    "releaseDate": "Release date",
+    "from": "From",
+    "to": "To",
+    "sortBy": "Sort by",
+    "search": "Search"
+  },
+  "movieSearch":{
+    "placeholder": "Find by title..."
+  },
+  "category":{
+    "preTitle": "All movies in the category : "
+  }
+}

@@ -3,7 +3,7 @@ import styles from "./MediaCard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-const MediaCard = ({ media }) => {
+const MediaCard = ({ media, locale }) => {
   return (
     <div className={styles.card}>
       <Link href={`/movies/${media.id}`}>
@@ -18,7 +18,7 @@ const MediaCard = ({ media }) => {
         <div className={styles.content}>
           <p className={styles.vote}>{media.vote_average.toFixed(1)}</p>
           <h2>{media.title}</h2>
-          <p>Le {new Date(media.release_date).toLocaleDateString("fr-FR")}</p>
+          <p>Le {new Date(media.release_date).toLocaleDateString(locale)}</p>
         </div>
       </Link>
     </div>

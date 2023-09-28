@@ -8,16 +8,16 @@ import { Suspense } from "react";
 export const dynamic = "force-static";
 export const revalidate = Constants.REVALIDATE_MOVIE_FREQUENCY;
 
-const MovieIdPage = async ({ params }) => {
-  const movie = await getMovieByPath(`/movie/${params.id}`);
+const MovieIdPage = async ({ params: { id, locale } }) => {
+  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
   if (!movie.original_title) {
     return notFound();
   }
   return (
     <div>
-      <MovieDetails movie={movie} />
+      <MovieDetails movie={movie} locale={locale} />
       <Suspense fallback={<p>Chargement...</p>}>
-        <SimilarMovies movieId={movie.id} />
+        <SimilarMovies movieId={movie.id} locale={locale} />
       </Suspense>
     </div>
   );

@@ -2,7 +2,7 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 170px);
     gap: 20px;
 
     .genre {

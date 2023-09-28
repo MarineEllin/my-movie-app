@@ -9,7 +9,7 @@ const TrendingPeople = async () => {
   return (
     <div className={styles.container}>
       {results
-        .slice(0, 10)
+        .slice(0, 8)
         .filter((people) => people.profile_path && people.name)
         .map((people) => (
           <div key={people.id}>

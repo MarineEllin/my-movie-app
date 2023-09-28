@@ -1,0 +1,26 @@
+@import "variables";
+
+.container {
+    display: flex;
+    gap:10px;
+    button {
+        background-color: $white;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    .activeLanguage {
+        color: $peps;
+        font-weight: 700;
+        border: 1px solid $white;
+        box-shadow: $box-shadow-light-grey;
+    }
+    .otherLanguage {
+        color: $light-grey;
+        background-color: $mid-grey;
+        border: 1px solid $mid-grey;
+        opacity: 0.4;
+    }
+}

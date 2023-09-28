@@ -1,9 +1,20 @@
 "use client";
+import { getDictionary } from "@/utils/dictionaries";
 import { useSelectedLayoutSegment, useParams, notFound } from "next/navigation";
+import { useEffect, useState } from "react";
 
-const CategoryTitle = ({ genres }) => {
+const CategoryTitle = ({ genres, locale }) => {
+  const [dictionary, setDictionary] = useState();
   const segment = useSelectedLayoutSegment();
   const { id } = useParams();
+
+  useEffect(() => {
+    async function fetchData() {
+      const dico = await getDictionary(locale);
+      setDictionary(dico);
+    }
+    fetchData();
+  }, [locale]);
 
   const getSidebarTitle = () => {
     if (!segment) {
@@ -20,7 +31,9 @@ const CategoryTitle = ({ genres }) => {
 
   return (
     <div>
-      <h1>Tous les films de la catégorie : {title}</h1>
+      <h1>
+        {dictionary && dictionary.category.preTitle} {title}
+      </h1>
     </div>
   );
 };

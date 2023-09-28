@@ -5,11 +5,11 @@ import { Constants } from "@/constants/Constants";
 
 export const revalidate = Constants.REVALIDATE_POPULAR_MOVIE_FREQUENCY;
 
-export default function Home() {
+export default function Home({ params: { locale } }) {
   return (
     <div className={styles.main}>
-      <Genres />
-      <Popular />
+      <Genres locale={locale} />
+      <Popular locale={locale} />
     </div>
   );
 }

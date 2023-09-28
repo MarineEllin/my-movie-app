@@ -4,14 +4,14 @@ import styles from "./layout.module.scss";
 import { getMovieByPath } from "@/utils/movieClient";
 import CategoryTitle from "@/components/SearchSideBar/CategoryTitle/CategoryTitle";
 
-const MovieSearchLayout = async ({ children }) => {
-  const { genres } = await getMovieByPath("/genre/movie/list");
+const MovieSearchLayout = async ({ children, params: { locale } }) => {
+  const { genres } = await getMovieByPath("/genre/movie/list", [], locale);
 
   return (
     <div className={styles.container}>
-      <CategoryTitle genres={genres} />
+      <CategoryTitle genres={genres} locale={locale} />
       <div className={styles.content}>
-        <SearchSideBar genres={genres} />
+        <SearchSideBar genres={genres} locale={locale} />
         <div>{children}</div>
       </div>
     </div>
