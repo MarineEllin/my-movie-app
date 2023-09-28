@@ -5,7 +5,7 @@ import styles from "./Popular.module.scss";
 import { getDictionary } from "@/utils/dictionaries";
 
 const Popular = async ({ locale }) => {
-  const { results } = await getMovieByPath("/movie/popular", [], locale);
+  const { results } = await getMovieByPath("/discover/movie", [], locale);
   const dictionary = await getDictionary(locale);
   const popularMovies = results.slice(0, 16);
   return (

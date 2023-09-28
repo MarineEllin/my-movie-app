@@ -1,6 +1,7 @@
 @import "variables";
 
 .header {
+    z-index: 5;
     color: $primary;
     font-family: var(--font-roboto);
     display: flex;
@@ -10,6 +11,10 @@
     color: $white;
     padding: 0 100px;
     gap: 20px;
+    box-shadow: $box-shadow;
+    position: fixed;
+    top:0;
+    width: 100%;
 
     .logo{
         font-weight: 700;

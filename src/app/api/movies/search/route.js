@@ -1,8 +1,9 @@
 import { getMovieByPath } from "@/utils/movieClient";
 
-export async function GET(request, locale) {
+export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("query");
+  const locale = searchParams.get("locale");
 
   const searchResults = await getMovieByPath(
     "/search/movie",

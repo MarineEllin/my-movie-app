@@ -14,8 +14,10 @@ const MovieSearch = ({ locale }) => {
 
   const [isOpen, setIsOpen] = useState(true);
 
-  const updateMovieSearch = async (query, locale) => {
-    const response = await fetch(`/api/movies/search?query=${query}`);
+  const updateMovieSearch = async (query) => {
+    const response = await fetch(
+      `/api/movies/search?query=${query}&locale=${locale}`
+    );
     const { results } = await response.json();
     setMovieResults(results.filter((movie) => movie.backdrop_path));
   };

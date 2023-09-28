@@ -1,11 +1,8 @@
-import React from 'react';
+import { getMovieByPath } from "@/utils/movieClient";
+import React from "react";
 
-const SeriesPage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const SeriesPage = async () => {
+  return <div></div>;
 };
 
 export default SeriesPage;
