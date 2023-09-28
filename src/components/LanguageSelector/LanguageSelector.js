@@ -17,7 +17,7 @@ const LanguageSelector = () => {
       currentLanguage.length + 1,
       pathname.length
     )}`;
-    router.push(newPathname);
+    router.push(newPathname, { scroll: false });
   };
 
   function getStyle(locale) {
