@@ -5,6 +5,7 @@
   .movieContainer {
     display: grid;
     grid-template-columns: repeat(4, 250px);
+    grid-template-rows: repeat(4, 450px);
     gap: 20px;
   }
   }     
