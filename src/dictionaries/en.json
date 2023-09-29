@@ -41,6 +41,7 @@
     "signup": "Sign up",
     "login": "Login",
     "logout": "Logout",
-    "password": "Password"
+    "password": "Password",
+    "profile": "Profile"
   }
 }

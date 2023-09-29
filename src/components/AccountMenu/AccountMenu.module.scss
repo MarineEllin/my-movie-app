@@ -1,0 +1,17 @@
+@import "variables";
+
+.menuContainer {
+    position: absolute;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    top: 120px;
+    right: 0px;
+    width: 250px;
+    height: 350px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

@@ -41,6 +41,7 @@
     "signup": "S'inscrire",
     "login": "Se connecter",
     "logout": "Déconnexion",
-    "password": "Mot de passe"
+    "password": "Mot de passe",
+    "profile": "Profil"
   }
 }

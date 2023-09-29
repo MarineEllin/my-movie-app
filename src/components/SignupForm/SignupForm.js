@@ -10,12 +10,6 @@ const SignupForm = () => {
   const { status } = useSession();
   const router = useRouter();
 
-  useEffect(() => {
-    if (status === "authenticated") {
-      router.push("/user/profile");
-    }
-  }, [status, router]);
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -32,14 +26,14 @@ const SignupForm = () => {
     });
   };
 
-  const [dictionary, setDictionary] = useState();
-  const locale = useCurrentLanguage();
-
   useEffect(() => {
     if (status === "authenticated") {
       router.push("/user/profile");
     }
   }, [status, router]);
+
+  const [dictionary, setDictionary] = useState();
+  const locale = useCurrentLanguage();
 
   useEffect(() => {
     async function fetchData() {
@@ -48,22 +42,6 @@ const SignupForm = () => {
     }
     fetchData();
   }, [locale]);
-
-  const handleSubmit = (e) => {
-    e.preventDedault();
-    const formData = new FormData(e.currentTarget);
-    fetch("/api/signup", {
-      method: "POST",
-      body: JSON.stringify({
-        email: formData.get(email),
-        password: formData.get(password),
-      }),
-    }).then((response) => {
-      if (response.ok) {
-        signIn();
-      }
-    });
-  };
 
   return (
     <div className={styles.formContainer}>

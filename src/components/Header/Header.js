@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import MovieSearch from "../MovieSearch/MovieSearch";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import { getDictionary } from "@/utils/dictionaries";
+import Account from "./Account/Account";
 
 const Header = async ({ locale }) => {
   const dictionary = await getDictionary(locale);
@@ -31,9 +30,7 @@ const Header = async ({ locale }) => {
       </div>
       <MovieSearch locale={locale} />
       <LanguageSelector />
-      <Link href={`${locale}/user/profile`}>
-        <FontAwesomeIcon icon={faUser} className={styles.accountIcon} />
-      </Link>
+      <Account locale={locale} />
     </header>
   );
 };
