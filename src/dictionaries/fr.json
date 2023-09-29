@@ -36,5 +36,11 @@
   },
   "category":{
     "preTitle": "Tous les films de la catégorie : "
+  },
+  "log": {
+    "signup": "S'inscrire",
+    "login": "Se connecter",
+    "logout": "Déconnexion",
+    "password": "Mot de passe"
   }
 }

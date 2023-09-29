@@ -31,9 +31,9 @@ const Header = async ({ locale }) => {
       </div>
       <MovieSearch locale={locale} />
       <LanguageSelector />
-      <div>
+      <Link href={`${locale}/user/profile`}>
         <FontAwesomeIcon icon={faUser} className={styles.accountIcon} />
-      </div>
+      </Link>
     </header>
   );
 };

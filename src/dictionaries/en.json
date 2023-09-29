@@ -36,5 +36,11 @@
   },
   "category":{
     "preTitle": "All movies in the category : "
+  },
+  "log": {
+    "signup": "Sign up",
+    "login": "Login",
+    "logout": "Logout",
+    "password": "Password"
   }
 }

@@ -4,7 +4,6 @@ import { getMovieByPath } from "@/utils/movieClient";
 import MediaCard from "@/components/MediaCard/MediaCard";
 
 const SearchResults = async ({ searchParams, genreId, locale }) => {
-  console.log(locale);
   const { results } = await getMovieByPath(
     "/discover/movie",
     [
