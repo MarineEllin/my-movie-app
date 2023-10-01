@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Like from "../Like/Like";
 import { getServerSession } from "next-auth";
+import prisma from "@/utils/prisma";
+import { useRouter } from "next/navigation";
 
 const MediaCard = async ({ media, locale }) => {
   const user = await getServerSession();
-
   let movieLikesList;
 
   if (user != null) {
@@ -19,7 +20,6 @@ const MediaCard = async ({ media, locale }) => {
     });
     movieLikesList = movieLikes;
   }
-
   console.log(movieLikesList);
 
   return (

@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Like = ({ mediaId, movieLikes }) => {
-  const [style, setStyle] = useState(styles.likeIcon);
-  const [likedListId, setLikedListId] = useState();
+  const router = useRouter();
+  const [style, setStyle] = useState();
   const { status } = useSession();
 
   const handleLikeClick = (e) => {
@@ -26,8 +27,21 @@ const Like = ({ mediaId, movieLikes }) => {
           method: "PATCH",
         });
       }
+      router.refresh();
     }
   };
+
+  useEffect(() => {
+    if (status !== "authenticated") {
+      setStyle(styles.likeIcon);
+    } else if (
+      movieLikes.map((movie) => movie.movieId).includes(mediaId.toString())
+    ) {
+      setStyle(styles.likeIconActive);
+    } else {
+      setStyle(styles.likeIcon);
+    }
+  }, [movieLikes, setStyle, status, mediaId]);
 
   return (
     <FontAwesomeIcon
