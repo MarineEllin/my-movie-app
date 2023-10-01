@@ -43,5 +43,13 @@
     "logout": "Logout",
     "password": "Password",
     "profile": "Profile"
+  },
+  "profile":{
+    "welcome": "Welcome on you profile page!",
+    "movieLikes": "Your favorite movies:",
+    "noMovieLikes": "You don't have favorite movies"
+  },
+  "allMovies": {
+    "movies": "All movies"
   }
 }

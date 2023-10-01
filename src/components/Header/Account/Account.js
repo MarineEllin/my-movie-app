@@ -12,14 +12,22 @@ const Account = ({ locale }) => {
     setDisplayAccountMenu(false);
   });
 
+  const setDisplayMenuFalse = () => {
+    setDisplayAccountMenu(false);
+  };
+
   return (
-    <div>
+    <div ref={ref}>
       <div onClick={() => setDisplayAccountMenu(!displayAccountMenu)}>
         <FontAwesomeIcon icon={faUser} className={styles.accountIcon} />
       </div>
-      <div ref={ref}>
-        {displayAccountMenu && <AccountMenu locale={locale} />}
-      </div>
+
+      {displayAccountMenu && (
+        <AccountMenu
+          locale={locale}
+          setDisplayMenuFalse={setDisplayMenuFalse}
+        />
+      )}
     </div>
   );
 };

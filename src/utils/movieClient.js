@@ -12,3 +12,11 @@ export const getMovieByPath = (path, params = [], language = "fr-FR") => {
 
   return fetch(url).then((res) => res.json());
 };
+
+export const getMovieLikes = async (movieIds, language = "fr") => {
+  const moviePromises = movieIds.map((movieId) =>
+    getMovieByPath(`/movie/${movieId}`, [], language)
+  );
+  const movies = await Promise.all(moviePromises);
+  return movies;
+};

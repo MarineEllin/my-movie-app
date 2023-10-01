@@ -43,5 +43,13 @@
     "logout": "Déconnexion",
     "password": "Mot de passe",
     "profile": "Profil"
+  },
+  "profile":{
+    "welcome": "Bienvenue sur votre page de profil !",
+    "movieLikes": "Vos films préférés :",
+    "noMovieLikes": "Vous n'avez aucun film préféré"
+  },
+  "allMovies": {
+    "movies": "Tous les films"
   }
 }

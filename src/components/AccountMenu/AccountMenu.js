@@ -7,15 +7,21 @@ import LoginBtn from "./LoginBtn/LoginBtn";
 import ProfileBtn from "./ProfileBtn/ProfileBtn";
 import SignupBtn from "./SignupBtn/SignupBtn";
 
-const AccountMenu = ({ locale }) => {
+const AccountMenu = ({ locale, setDisplayMenuFalse }) => {
   const { status } = useSession();
   return (
     <div className={styles.menuContainer}>
       <div>
         {status === "authenticated" ? (
-          <ProfileBtn locale={locale} />
+          <ProfileBtn
+            locale={locale}
+            setDisplayMenuFalse={setDisplayMenuFalse}
+          />
         ) : (
-          <SignupBtn locale={locale} />
+          <SignupBtn
+            locale={locale}
+            setDisplayMenuFalse={setDisplayMenuFalse}
+          />
         )}
       </div>
       <div>
@@ -25,6 +31,7 @@ const AccountMenu = ({ locale }) => {
           <LoginBtn locale={locale} />
         )}
       </div>
+      <div className={styles.bubble}></div>
     </div>
   );
 };

@@ -51,7 +51,7 @@ const MovieDetails = async ({ movie, locale }) => {
           <div className={styles.details}>
             <h3>{dictionary.movie.actors}</h3>
             <Suspense fallback={<p>Chargement...</p>}>
-              <MovieActors movieId={movie.id} />
+              <MovieActors movieId={movie.id} locale={locale} />
             </Suspense>
           </div>
         </div>

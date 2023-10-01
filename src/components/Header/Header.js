@@ -13,17 +13,17 @@ const Header = async ({ locale }) => {
     <header className={`${styles.header}`}>
       <div className={styles.logo}>
         <p>
-          <Link href="/">MyMovieApp</Link>
+          <Link href={`/${locale}`}>MyMovieApp</Link>
         </p>
       </div>
       <div className={styles.navigation}>
         <nav>
           <ul>
             <li>
-              <Link href="/series">{dictionary.header.series}</Link>
+              <Link href={`/${locale}/series`}>{dictionary.header.series}</Link>
             </li>
             <li>
-              <Link href="/movies">{dictionary.header.films}</Link>
+              <Link href={`/${locale}/movies`}>{dictionary.header.films}</Link>
             </li>
           </ul>
         </nav>

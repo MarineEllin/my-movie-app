@@ -1,7 +1,7 @@
 @import "variables";
 
 .logoutBtn {
-    width: 100px;
+    width: 150px;
     padding: 5px 10px;
     background-color: $peps; 
     border-radius: $border-radius;   
@@ -11,5 +11,8 @@
     &:hover{
         opacity: 1;
         box-shadow: $box-shadow;
+    }
+    span {
+        margin-left: 10px;
     }
 }

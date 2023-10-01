@@ -4,14 +4,24 @@
     position: absolute;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-    top: 120px;
+    top: 80px;
     right: 0px;
-    width: 250px;
-    height: 350px;
+    width: 200px;
+    height: 250px;
     background-color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    .bubble {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        transform: rotate(45deg);
+        top: -6px;
+        right: 51px;
+        border-radius: 2px;
+    }
 }

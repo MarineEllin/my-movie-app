@@ -4,7 +4,7 @@ import { getMovieByPath } from "@/utils/movieClient";
 import Image from "next/image";
 import Link from "next/link";
 
-const MovieActors = async ({ movieId }) => {
+const MovieActors = async ({ movieId, locale }) => {
   const { cast } = await getMovieByPath(`/movie/${movieId}/credits`);
   return (
     <div className={styles.cast}>
@@ -13,7 +13,10 @@ const MovieActors = async ({ movieId }) => {
         .slice(0, 4)
         .map((person) => (
           <div key={person.id}>
-            <Link href={`/actors/${person.id}/`} className={styles.person}>
+            <Link
+              href={`/${locale}/actors/${person.id}/`}
+              className={styles.person}
+            >
               <div className={styles.image}>
                 <Image
                   src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w185${person.profile_path}`}
