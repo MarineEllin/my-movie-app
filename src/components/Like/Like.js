@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { signIn, useSession } from "next-auth/react";
 
-const Like = ({ mediaId }) => {
+const Like = ({ mediaId, movieLikesIdArr }) => {
   const { data: session } = useSession();
-
   const handleLikeClick = (e) => {
     e.preventDefault();
     if (!session) {
@@ -17,10 +16,17 @@ const Like = ({ mediaId }) => {
     });
   };
 
+  const getIconStyle = (movieLikesIdArr) => {
+    if (movieLikesIdArr.includes(mediaId.toString())) {
+      return styles.likeIconActive;
+    }
+    return styles.likeIcon;
+  };
+
   return (
     <FontAwesomeIcon
       icon={faHeart}
-      className={styles.likeIcon}
+      className={getIconStyle(movieLikesIdArr)}
       onClick={handleLikeClick}
     />
   );

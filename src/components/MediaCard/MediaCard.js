@@ -3,13 +3,16 @@ import styles from "./MediaCard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Like from "../Like/Like";
+import { getMovieLikesId } from "@/utils/movieClient";
 
-const MediaCard = ({ media, locale }) => {
+const MediaCard = ({ media, locale, movieLikes }) => {
+  const movieLikesIdArr = getMovieLikesId(movieLikes);
+
   return (
     <div className={styles.card}>
       <Link href={`/${locale}/movies/${media.id}`}>
         <div className={styles.image}>
-          <Like mediaId={media.id} />
+          <Like mediaId={media.id} movieLikesIdArr={movieLikesIdArr} />
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt={media.title}

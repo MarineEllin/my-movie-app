@@ -1,3 +1,4 @@
+import { getMovieLikes } from "@/utils/movieClient";
 import prisma from "@/utils/prisma";
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";

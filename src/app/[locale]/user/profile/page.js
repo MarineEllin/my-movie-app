@@ -8,7 +8,6 @@ import { getDictionary } from "@/utils/dictionaries";
 const ProfilePage = async ({ params: { locale } }) => {
   const dictionary = await getDictionary(locale);
   const { user: userSession } = await getServerSession();
-  console.log(locale);
 
   const { movieLikes } = await prisma.user.findFirst({
     where: { email: userSession.email },
@@ -30,7 +29,12 @@ const ProfilePage = async ({ params: { locale } }) => {
 
       <div className={styles.mediacardContainer}>
         {movies.map((movie) => (
-          <MediaCard key={movie.id} media={movie} locale={locale} />
+          <MediaCard
+            key={movie.id}
+            media={movie}
+            locale={locale}
+            movieLikes={movieLikes}
+          />
         ))}
       </div>
     </div>
