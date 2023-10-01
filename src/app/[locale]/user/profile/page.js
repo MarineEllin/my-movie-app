@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./page.module.scss";
-import { getServerSession } from "next-auth";
 import { getMovieLikes } from "@/utils/movieClient";
 import MediaCard from "@/components/MediaCard/MediaCard";
 import { getDictionary } from "@/utils/dictionaries";
+import { getServerSession } from "next-auth";
 
 const ProfilePage = async ({ params: { locale } }) => {
   const dictionary = await getDictionary(locale);
+
   const { user: userSession } = await getServerSession();
 
   const { movieLikes } = await prisma.user.findFirst({

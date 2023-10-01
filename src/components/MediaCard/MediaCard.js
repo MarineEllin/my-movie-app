@@ -3,16 +3,30 @@ import styles from "./MediaCard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Like from "../Like/Like";
-import { getMovieLikesId } from "@/utils/movieClient";
+import { getServerSession } from "next-auth";
 
-const MediaCard = ({ media, locale, movieLikes }) => {
-  const movieLikesIdArr = getMovieLikesId(movieLikes);
+const MediaCard = async ({ media, locale }) => {
+  const user = await getServerSession();
+
+  let movieLikesList;
+
+  if (user != null) {
+    const { movieLikes } = await prisma.user.findFirst({
+      where: { email: user.email },
+      include: {
+        movieLikes: true,
+      },
+    });
+    movieLikesList = movieLikes;
+  }
+
+  console.log(movieLikesList);
 
   return (
     <div className={styles.card}>
       <Link href={`/${locale}/movies/${media.id}`}>
         <div className={styles.image}>
-          <Like mediaId={media.id} movieLikesIdArr={movieLikesIdArr} />
+          <Like mediaId={media.id} movieLikes={movieLikesList} />
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt={media.title}
