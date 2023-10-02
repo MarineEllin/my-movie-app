@@ -5,6 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import useCurrentMovieLikes from "@/hooks/useCurrentMovieLikes";
 
 const Like = ({ mediaId, movieLikes }) => {
   const router = useRouter();
@@ -14,7 +15,7 @@ const Like = ({ mediaId, movieLikes }) => {
   const handleLikeClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (status !== "authenticated" || movieLikes == null) {
+    if (status !== "authenticated") {
       signIn();
     } else {
       if (

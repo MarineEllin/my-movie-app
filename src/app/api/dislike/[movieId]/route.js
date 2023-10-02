@@ -14,8 +14,6 @@ export async function PATCH(request, { params: { movieId } }) {
     },
   });
 
-  console.log(userId);
-
   const data = await prisma.movieLike.findMany({
     where: {
       userId: userId,
@@ -23,7 +21,6 @@ export async function PATCH(request, { params: { movieId } }) {
   });
 
   const newData = data.filter((movie) => movie.movieId != movieId);
-  console.log(newData);
 
   const movieLikes = await prisma.movieLike.deleteMany({
     where: {

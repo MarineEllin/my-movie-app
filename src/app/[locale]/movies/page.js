@@ -4,6 +4,7 @@ import { getDictionary } from "@/utils/dictionaries";
 
 const MoviesPage = async ({ searchParams, params: { locale } }) => {
   const dictionary = await getDictionary(locale);
+
   return (
     <div className="container">
       <h1>{dictionary && dictionary.allMovies.movies}</h1>
