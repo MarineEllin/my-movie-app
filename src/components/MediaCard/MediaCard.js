@@ -20,11 +20,10 @@ const MediaCard = async ({ media, locale }) => {
     });
     movieLikesList = movieLikes;
   }
-  console.log(movieLikesList);
 
   return (
     <div className={styles.card}>
-      <Link href={`/${locale}/movies/${media.id}`}>
+      <Link href={`/movies/${media.id}`}>
         <div className={styles.image}>
           <Like mediaId={media.id} movieLikes={movieLikesList} />
           <Image

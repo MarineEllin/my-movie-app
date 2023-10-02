@@ -13,6 +13,7 @@ const Like = ({ mediaId, movieLikes }) => {
 
   const handleLikeClick = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     if (status !== "authenticated" || movieLikes == null) {
       signIn();
     } else {
@@ -32,7 +33,7 @@ const Like = ({ mediaId, movieLikes }) => {
   };
 
   useEffect(() => {
-    if (status !== "authenticated") {
+    if (status != "authenticated" || !movieLikes) {
       setStyle(styles.likeIcon);
     } else if (
       movieLikes.map((movie) => movie.movieId).includes(mediaId.toString())
