@@ -16,7 +16,9 @@ const Header = async ({ locale }) => {
           <Link href={`/${locale}`}>MyMovieApp</Link>
         </p>
       </div>
-      <div className={styles.navigation}>
+      {
+        //To be implemented in next features
+        /* <div className={styles.navigation}>
         <nav>
           <ul>
             <li>
@@ -27,7 +29,8 @@ const Header = async ({ locale }) => {
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */
+      }
       <MovieSearch locale={locale} />
       <LanguageSelector />
       <Account locale={locale} />

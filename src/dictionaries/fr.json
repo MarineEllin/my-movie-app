@@ -42,7 +42,9 @@
     "login": "Se connecter",
     "logout": "Déconnexion",
     "password": "Mot de passe",
-    "profile": "Profil"
+    "profile": "Profil",
+    "toLogin": "Déjà un compte ?",
+    "toSignup": "Pas encore de compte ?"
   },
   "profile":{
     "welcome": "Bienvenue sur votre page de profil !",
@@ -51,5 +53,8 @@
   },
   "allMovies": {
     "movies": "Tous les films"
+  },
+  "loadMore":{
+    "loadMore": "Plus"
   }
 }

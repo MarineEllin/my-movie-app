@@ -42,7 +42,9 @@
     "login": "Login",
     "logout": "Logout",
     "password": "Password",
-    "profile": "Profile"
+    "profile": "Profile",
+    "toLogin": "Already have an account?",
+    "toSignup": "Do not have an account yet?"
   },
   "profile":{
     "welcome": "Welcome on you profile page!",
@@ -51,5 +53,8 @@
   },
   "allMovies": {
     "movies": "All movies"
+  },
+  "loadMore":{
+    "loadMore": "More"
   }
 }

@@ -1,4 +1,4 @@
-import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
@@ -9,8 +9,8 @@ const SignupBtn = ({ locale, setDisplayMenuFalse }) => {
   const dictionary = useCurrentDictionary();
   return (
     <div className={styles.signupBtn} onClick={setDisplayMenuFalse}>
-      <Link href={`${locale}/signup`}>
-        <FontAwesomeIcon icon={faRightToBracket} />
+      <Link href={`/signup`}>
+        <FontAwesomeIcon icon={faUserPlus} />
         <span>{dictionary && dictionary.log.signup}</span>
       </Link>
     </div>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import useCurrentLanguage from "@/hooks/useCurrentLanguage";
 import { getDictionary } from "@/utils/dictionaries";
+import Link from "next/link";
 
 const SignupForm = () => {
   const { status } = useSession();
@@ -45,8 +46,8 @@ const SignupForm = () => {
 
   return (
     <div className={styles.formContainer}>
+      <h1>{dictionary && dictionary.log.signup}</h1>
       <form onSubmit={handleFormSubmit} className={styles.formContent}>
-        <h1>{dictionary && dictionary.log.signup}</h1>
         <input type="text" name="email" id="" placeholder="Email" />
         <input
           type="password"
@@ -55,6 +56,9 @@ const SignupForm = () => {
         />
         <button type="submit">{dictionary && dictionary.log.signup}</button>
       </form>
+      <Link href={`/${locale}/signIn`}>
+        <p>{dictionary && dictionary.log.toLogin}</p>
+      </Link>
     </div>
   );
 };

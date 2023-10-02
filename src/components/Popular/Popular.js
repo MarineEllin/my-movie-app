@@ -1,4 +1,3 @@
-import React from "react";
 import { getMovieByPath } from "@/utils/movieClient";
 import MediaCard from "../MediaCard/MediaCard";
 import styles from "./Popular.module.scss";
@@ -9,7 +8,7 @@ import prisma from "@/utils/prisma";
 const Popular = async ({ locale }) => {
   const { results } = await getMovieByPath("/discover/movie", [], locale);
   const dictionary = await getDictionary(locale);
-  const popularMovies = results.slice(0, 16);
+  const popularMovies = results.slice(0, 120);
 
   const user = getServerSession();
   let movieLikesList = [];

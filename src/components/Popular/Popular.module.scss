@@ -1,12 +1,22 @@
 @import "variables";
 
 .popularContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 
   .movieContainer {
     display: grid;
     grid-template-columns: repeat(4, 250px);
     grid-template-rows: repeat(4, 450px);
     gap: 20px;
+  }
+
+  .loadMoreContainer {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+  justify-content: center;
   }
   }     
   
