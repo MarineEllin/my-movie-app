@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./MovieSearchResults.module.scss";
-import { useState } from "react";
 import { useClickAway } from "@uidotdev/usehooks";
 
 const MovieSearchResults = ({ movieResults, isOpen, setIsOpen }) => {
@@ -13,7 +12,7 @@ const MovieSearchResults = ({ movieResults, isOpen, setIsOpen }) => {
     return (
       <div className={styles.searchResults} ref={ref}>
         {movieResults.map((movie) => (
-          <div key={movie.id}>
+          <div key={movie.id} onClick={() => setIsOpen(false)}>
             <Link
               href={`/movies/${movie.id}`}
               onMouseDown={(e) => e.preventDefault()}

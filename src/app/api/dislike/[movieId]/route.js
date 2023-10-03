@@ -14,18 +14,19 @@ export async function PATCH(request, { params: { movieId } }) {
     },
   });
 
-  const data = await prisma.movieLike.findMany({
-    where: {
-      userId: userId,
-    },
-  });
-
-  const newData = data.filter((movie) => movie.movieId != movieId);
-
-  const movieLikes = await prisma.movieLike.deleteMany({
+  const deleteMovieLike = await prisma.movieLike.deleteMany({
     where: {
       userId: userId,
       movieId: movieId.toString(),
+    },
+  });
+
+  const { movieLikes } = await prisma.user.findFirst({
+    where: {
+      email: token.email,
+    },
+    select: {
+      movieLikes: true,
     },
   });
 

@@ -1,20 +1,46 @@
-
+@use "/src/styles/mixins" as mixin;
 @import "variables";
 
 .container {
+
+
+        input[type="search"]::-webkit-search-cancel-button {
+            filter: invert(50%) sepia(50%) saturate(2878%) hue-rotate(346deg) brightness(100%) contrast(100%);
+
+        }
     .input {
     min-width: 400px;
     margin: 10px 0;
     border-radius: 10px;
     border: none;
     outline: none;
+    padding: 0 10px;
+    color: $mid-grey;
     padding: 10px;
+    @include mixin.xs-medium {
+        min-width: 250px;
+        padding: 6px;
+        font-size: 12px;
+        text-align: center;
+    }
     }
     .input::placeholder{
         font-family: var(--font-roboto);
         color: $light-peps;
+        @include mixin.xs-medium {
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+    .input:focus {
+        color: $mid-grey;
+        @include mixin.xs-medium {
+            font-size: 12px;
+            text-align: center;
+        }
     }
     .input:focus::placeholder {
         color: transparent;
     }
 }
+

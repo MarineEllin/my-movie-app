@@ -5,14 +5,14 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import useCurrentMovieLikes from "@/hooks/useCurrentMovieLikes";
 
-const Like = ({ mediaId, movieLikes }) => {
+const Like = ({ mediaId }) => {
   const router = useRouter();
   const [style, setStyle] = useState();
-  const { status } = useSession();
+  const { data: session, status } = useSession();
+  const [movieLikes, setMovieLikes] = useState([]);
 
-  const handleLikeClick = (e) => {
+  const handleLikeClick = async (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (status !== "authenticated") {
@@ -21,25 +21,45 @@ const Like = ({ mediaId, movieLikes }) => {
       if (
         !movieLikes.map((movie) => movie.movieId).includes(mediaId.toString())
       ) {
-        fetch(`/api/like/${mediaId}`, {
+        const res = await fetch(`/api/like/${mediaId}`, {
           method: "POST",
         });
+        const movieLikesFetch = await res.json();
+        setMovieLikes(movieLikesFetch);
       } else {
-        fetch(`/api/dislike/${mediaId}`, {
+        const res = await fetch(`/api/dislike/${mediaId}`, {
           method: "PATCH",
         });
+        const movieLikesFetch = await res.json();
+        setMovieLikes(movieLikesFetch);
       }
-      router.refresh();
     }
+    router.refresh();
   };
 
   useEffect(() => {
-    if (status != "authenticated" || !movieLikes) {
-      setStyle(styles.likeIcon);
-    } else if (
-      movieLikes.map((movie) => movie.movieId).includes(mediaId.toString())
-    ) {
-      setStyle(styles.likeIconActive);
+    if (status === "authenticated") {
+      async function fetchMovieLikes() {
+        const res = await fetch(`/api/getMovieLikes`, {
+          method: "GET",
+        });
+
+        const movieLikesFromPrisma = await res.json();
+        setMovieLikes(movieLikesFromPrisma);
+      }
+      fetchMovieLikes();
+    }
+  }, [status]);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      if (
+        movieLikes.map((movie) => movie.movieId).includes(mediaId.toString())
+      ) {
+        setStyle(styles.likeIconActive);
+      } else {
+        setStyle(styles.likeIcon);
+      }
     } else {
       setStyle(styles.likeIcon);
     }

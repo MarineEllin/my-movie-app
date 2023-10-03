@@ -1,4 +1,6 @@
+@use "/src/styles/_mixins" as mixin;
 @import "variables";
+
 
 .popularContainer {
   display: flex;
@@ -10,6 +12,22 @@
     grid-template-columns: repeat(4, 250px);
     grid-template-rows: repeat(4, 450px);
     gap: 20px;
+    @include mixin.xs-medium {
+      grid-template-columns: repeat(1, 200px);
+      grid-template-rows: repeat(1, 350px);
+    }
+    @include mixin.large {
+      grid-template-columns: repeat(2, 250px);
+      grid-template-rows: repeat(2, 450px);
+    }
+    @include mixin.xl {
+      grid-template-columns: repeat(3, 250px);
+      grid-template-rows: repeat(3, 450px);
+    }
+    @include mixin.xxl {
+      grid-template-columns: repeat(4, 250px);
+      grid-template-rows: repeat(4, 450px);
+    }
   }
 
   .loadMoreContainer {

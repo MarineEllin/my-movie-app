@@ -1,3 +1,4 @@
+@use "/src/styles/mixins" as mixin;
 @import "variables";
 
 .searchResults {
@@ -9,6 +10,10 @@
   box-shadow: $box-shadow;
   font-family: var(--font-montserrat);
   border-radius: $border-radius;
+  @include mixin.xs-medium {
+    top: 105px;
+    right: 10px;
+  }
 
   > div > a {
     display: flex;

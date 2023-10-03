@@ -1,7 +1,22 @@
+@use "/src/styles/mixins" as mixin;
 @import "variables";
-.accountIcon{
+
+.accountContainer {
+    position: relative;
+  .accountIcon{
+    
     color: $peps;
     font-size: 24px;
     cursor: pointer;
-    margin-right: 50px;
+}  
+.accountMenu {
+    z-index: 5;
+    position: absolute;
+    top:45px;
+    right: -20px;
+    @include mixin.xs-medium {
+        right: -80px;
+    }
+
+}
 }

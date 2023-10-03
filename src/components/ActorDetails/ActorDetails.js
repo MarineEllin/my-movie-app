@@ -16,12 +16,15 @@ const ActorDetails = async ({ actorId, locale }) => {
 
   return (
     <div className={styles.container}>
-      <Image
-        src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${person.profile_path}`}
-        alt={person.name}
-        width={350}
-        height={500}
-      />
+      <div className={styles.actorImage}>
+        <Image
+          src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${person.profile_path}`}
+          alt={person.name}
+          width={350}
+          height={500}
+        />
+      </div>
+
       <div>
         <h2>
           {person.name} {person.also_know_as && `(${person.also_know_as})`}

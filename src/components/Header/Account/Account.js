@@ -17,17 +17,18 @@ const Account = ({ locale }) => {
   };
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={styles.accountContainer}>
       <div onClick={() => setDisplayAccountMenu(!displayAccountMenu)}>
         <FontAwesomeIcon icon={faUser} className={styles.accountIcon} />
       </div>
-
-      {displayAccountMenu && (
-        <AccountMenu
-          locale={locale}
-          setDisplayMenuFalse={setDisplayMenuFalse}
-        />
-      )}
+      <div className={styles.accountMenu}>
+        {displayAccountMenu && (
+          <AccountMenu
+            locale={locale}
+            setDisplayMenuFalse={setDisplayMenuFalse}
+          />
+        )}
+      </div>
     </div>
   );
 };

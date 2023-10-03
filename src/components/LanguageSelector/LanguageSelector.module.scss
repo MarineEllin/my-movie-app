@@ -1,3 +1,4 @@
+@use "/src/styles/mixins" as mixin;
 @import "variables";
 
 .container {
@@ -10,6 +11,10 @@
         cursor: pointer;
         font-size: 12px;
         font-weight: 300;
+        @include mixin.xs-medium {
+            font-size: 10px;
+            padding: 6px;
+        }
     }
     .activeLanguage {
         color: $peps;

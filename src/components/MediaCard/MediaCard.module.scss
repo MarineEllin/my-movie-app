@@ -1,3 +1,5 @@
+@use "/src/styles/mixins" as mixin;
+
 @import "variables";
 
 .card {
@@ -5,10 +7,17 @@
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   min-width: 250px;
+  @include mixin.xs-medium {
+    min-width: 200px;
+  }
+ 
   .image {
     position: relative;
     width: 100%;
     height: 300px;
+     @include mixin.xs-medium {
+      height: 250px;
+  }
     img {
       border-radius: 10px 10px 0 0;
       object-fit: cover;
@@ -20,6 +29,7 @@
   .content {
     padding: 5px 10px;
     position: relative;
+    overflow-wrap: break-word;
 
     .vote {
       display: flex;
@@ -38,11 +48,8 @@
       box-shadow: $box-shadow;
     }
 
-    h3 {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 5px 0;
-      margin-top: 15px;
+    h2 {
+      
     }
 
     p {

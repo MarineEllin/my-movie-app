@@ -1,9 +1,15 @@
+@use "/src/styles/_mixins" as mixin;
+
 @import "variables";
 
 .container {
     display: grid;
     grid-template-columns: repeat(2, 170px);
     gap: 20px;
+    @include mixin.xs-medium {
+        grid-template-columns: repeat(2, 110px);
+        gap: 10px;
+      }
 
     .genre {
         background-color: $mid-grey;
@@ -13,6 +19,8 @@
         box-shadow: $box-shadow;
         transition: all 0.5s ease;
         text-align: center;
+ 
+
         &:hover {
             color: $light-peps;
             background-color: $primary;
@@ -22,5 +30,9 @@
     p {
         margin: 0;
         padding: 10px;
+        @include mixin.xs-medium {
+            padding: 2px 3px;
+
+          }
     }
 }

@@ -4,22 +4,9 @@ import Image from "next/image";
 import MovieActors from "./MovieActors/MovieActors";
 import { getDictionary } from "@/utils/dictionaries";
 import Like from "../Like/Like";
-import { getServerSession } from "next-auth";
 
-const MovieDetails = async ({ movie, locale, movieLikes }) => {
+const MovieDetails = async ({ movie, locale }) => {
   const dictionary = await getDictionary(locale);
-  const user = getServerSession();
-  let movieLikesList = [];
-
-  if (user != null) {
-    const { movieLikes } = await prisma.user.findFirst({
-      where: { email: user.email },
-      include: {
-        movieLikes: true,
-      },
-    });
-    movieLikesList = movieLikes;
-  }
 
   return (
     <div className={styles.movieContainer}>
@@ -34,8 +21,8 @@ const MovieDetails = async ({ movie, locale, movieLikes }) => {
         )}
       </div>
       <div className={styles.movieContent}>
-        <Like mediaId={movie.id} movieLikes={movieLikesList} />
-        <div>
+        <Like mediaId={movie.id} />
+        <div className={styles.image}>
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w342${movie.poster_path}`}
             alt={movie.title}

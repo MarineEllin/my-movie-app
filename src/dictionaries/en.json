@@ -35,7 +35,7 @@
     "placeholder": "Find by title..."
   },
   "category":{
-    "preTitle": "All movies in the category : "
+    "preTitle": "Category : "
   },
   "log": {
     "signup": "Sign up",

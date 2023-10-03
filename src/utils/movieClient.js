@@ -20,9 +20,3 @@ export const getMovieLikes = async (movieIds, language = "fr") => {
   const movies = await Promise.all(moviePromises);
   return movies;
 };
-
-export const getMovieLikesId = (movieLikes) => {
-  const movieLikesIdArr = [];
-  movieLikes.map((movie) => movieLikesIdArr.push(movie.movieId));
-  return movieLikesIdArr;
-};

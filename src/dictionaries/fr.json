@@ -35,7 +35,7 @@
     "placeholder": "Rechercher par titre..."
   },
   "category":{
-    "preTitle": "Tous les films de la catégorie : "
+    "preTitle": "Catégorie : "
   },
   "log": {
     "signup": "S'inscrire",

@@ -3,18 +3,13 @@ import styles from "./Header.module.scss";
 import Link from "next/link";
 import MovieSearch from "../MovieSearch/MovieSearch";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
-import { getDictionary } from "@/utils/dictionaries";
 import Account from "./Account/Account";
 
 const Header = async ({ locale }) => {
-  const dictionary = await getDictionary(locale);
-
   return (
-    <header className={`${styles.header}`}>
+    <header className={styles.header}>
       <div className={styles.logo}>
-        <p>
-          <Link href={`/${locale}`}>MyMovieApp</Link>
-        </p>
+        <Link href={`/${locale}`}>MyMovieApp</Link>
       </div>
       {
         //To be implemented in next features

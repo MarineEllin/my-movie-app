@@ -4,15 +4,18 @@ import { useEffect, useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import styles from "./MovieSearch.module.scss";
 import MovieSearcResults from "./MovieSearchResults/MovieSearcResults";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getDictionary } from "@/utils/dictionaries";
+import { useClickAway } from "@uidotdev/usehooks";
 
 const MovieSearch = ({ locale }) => {
   const [dictionary, setDictionary] = useState();
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
-
   const [isOpen, setIsOpen] = useState(true);
+
+  const ref = useClickAway(() => {
+    setIsOpen(false);
+  });
 
   const updateMovieSearch = async (query) => {
     const response = await fetch(
@@ -36,7 +39,7 @@ const MovieSearch = ({ locale }) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={ref}>
       <DebounceInput
         minLength={2}
         debounceTimeout={500}
@@ -45,6 +48,7 @@ const MovieSearch = ({ locale }) => {
         onBlurCapture={() => setHasFocus(false)}
         onFocus={handleFocus}
         className={styles.input}
+        type="search"
       />
       {movieResults.length > 0 && (
         <MovieSearcResults

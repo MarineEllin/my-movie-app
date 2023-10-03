@@ -1,9 +1,11 @@
+
 @import "variables";
 
 .cast {
     display: flex;
     flex-direction: row;
     gap: 50px;
+    flex-wrap: wrap;
     .person {
         display: flex;
         flex-direction: column;
@@ -21,6 +23,7 @@
                     }
                 }
             }
+
         .name{
             text-align: center;
             margin: 0;

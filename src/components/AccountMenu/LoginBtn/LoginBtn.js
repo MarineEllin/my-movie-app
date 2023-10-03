@@ -7,19 +7,18 @@ import styles from "./LoginBtn.module.scss";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import useCurrentDictionary from "@/hooks/useCurrentDictionary";
+import useCurrentLanguage from "@/hooks/useCurrentLanguage";
 
 const LoginBtn = () => {
   const dictionary = useCurrentDictionary();
-  const handleClickLogin = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    signIn();
-  };
+  const locale = useCurrentLanguage();
 
   return (
-    <div className={styles.loginBtn} onClick={handleClickLogin}>
-      <FontAwesomeIcon icon={faRightToBracket} />
-      <span>{dictionary && dictionary.log.login}</span>
+    <div className={styles.loginBtn}>
+      <Link href={`/${locale}/signIn`}>
+        <FontAwesomeIcon icon={faRightToBracket} />
+        <span>{dictionary && dictionary.log.login}</span>
+      </Link>
     </div>
   );
 };

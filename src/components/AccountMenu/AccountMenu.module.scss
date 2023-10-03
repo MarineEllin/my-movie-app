@@ -1,11 +1,10 @@
+@use "/src/styles/mixins" as mixin;
 @import "variables";
 
 .menuContainer {
-    position: absolute;
+    position: relative;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
-    top: 80px;
-    right: 0px;
     width: 200px;
     height: 150px;
     background-color: $white;
@@ -20,8 +19,11 @@
         height: 20px;
         background-color: $white;
         transform: rotate(45deg);
-        top: -6px;
-        right: 51px;
+        top: -8px;
+        right: 20px;
         border-radius: 2px;
+        @include mixin.xs-medium {
+            right: 80px;
+        }
     }
 }

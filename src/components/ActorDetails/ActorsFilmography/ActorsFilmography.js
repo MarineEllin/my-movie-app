@@ -20,7 +20,7 @@ const ActorsFilmography = async ({ actorId, locale }) => {
           .filter((film) => film.poster_path && film.title)
           .slice(0, 6)
           .map((film) => (
-            <div key={film.id}>
+            <div key={film.id} className={styles.filmImage}>
               {film.title ? (
                 <Link href={`/movies/${film.id}`} className={styles.film}>
                   <Image
@@ -29,6 +29,7 @@ const ActorsFilmography = async ({ actorId, locale }) => {
                     width={120}
                     height={180}
                   />
+
                   <p>{film.title}</p>
                 </Link>
               ) : (

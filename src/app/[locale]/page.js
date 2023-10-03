@@ -2,6 +2,7 @@ import Genres from "@/components/Genres/Genres";
 import styles from "./page.module.scss";
 import Popular from "@/components/Popular/Popular";
 import { Constants } from "@/constants/Constants";
+import { getServerSession } from "next-auth";
 
 export const revalidate = Constants.REVALIDATE_POPULAR_MOVIE_FREQUENCY;
 

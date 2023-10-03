@@ -2,6 +2,7 @@
 import { getDictionary } from "@/utils/dictionaries";
 import { useSelectedLayoutSegment, useParams, notFound } from "next/navigation";
 import { useEffect, useState } from "react";
+import styles from "./CategoryTitle.module.scss";
 
 const CategoryTitle = ({ genres, locale }) => {
   const [dictionary, setDictionary] = useState();
@@ -30,7 +31,7 @@ const CategoryTitle = ({ genres, locale }) => {
   const title = getSidebarTitle();
 
   return (
-    <div>
+    <div className={styles.categoryTitleContainer}>
       <h1>
         {dictionary && dictionary.category.preTitle} {title}
       </h1>

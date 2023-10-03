@@ -1,0 +1,14 @@
+@use "/src/styles/mixins" as mixin;
+
+.categoryTitleContainer {
+    display: flex;
+    flex-direction: row;
+
+    h1 {
+        text-align: left;
+        @include mixin.xs-medium {
+            text-align: center;
+        }
+        
+    }
+}
