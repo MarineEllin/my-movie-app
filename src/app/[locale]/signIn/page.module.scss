@@ -2,6 +2,7 @@
 @import "variables";
 
 .formContainer {
+    position: relative;
     box-shadow: $box-shadow;
     padding: 20px;
     border-radius: $border-radius;
@@ -47,6 +48,14 @@
         cursor: pointer;  
         color: $mid-grey;
         text-decoration: underline;
+    }
+    .error {
+        font-size: 12px;
+        cursor: pointer;  
+        color: $peps;
+        text-decoration:none;
+        margin: 0;
+        margin-left: 10px;
     }
 
 }

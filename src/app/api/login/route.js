@@ -15,5 +15,5 @@ export async function POST(request) {
     return NextResponse.json(rest);
   }
 
-  return NextResponse.json(null);
+  return NextResponse.json({ message: "Bad credentials" }, 401);
 }

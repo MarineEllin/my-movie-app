@@ -44,7 +44,10 @@
     "password": "Password",
     "profile": "Profile",
     "toLogin": "Already have an account?",
-    "toSignup": "Do not have an account yet?"
+    "toSignup": "Do not have an account yet?",
+    "passwordAndRegex": "Password: min 8 characters, 1 lowercase, 1 uppercase letter, 1 special character/digit",
+    "errorCreatingAccount": "Unable to create account: user already exists.",
+    "errorLogin" : "Incorrect email or password."
   },
   "profile":{
     "welcome": "Welcome on you profile page!",
