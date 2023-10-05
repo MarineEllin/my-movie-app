@@ -17,7 +17,7 @@ const ErrorLogin = ({ setErrorLogin }) => {
       <h1 className={styles.content}>
         {dictionary && dictionary.log.errorLogin}
       </h1>
-      <Link href={`/${locale}/signIn`}>
+      <Link href={`/${locale}/signup`}>
         <p>{dictionary && dictionary.log.signup}</p>
       </Link>
     </div>

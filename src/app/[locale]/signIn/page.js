@@ -37,10 +37,10 @@ const LoginPage = ({ params: { locale } }) => {
       password: data.password,
       redirect: false,
     }).then((response) => {
-      if (response.ok) {
+      if (response.error === null) {
         router.push(`/${locale}`);
       } else {
-        setSuccesLogin(true);
+        setErrorLogin(true);
       }
     });
   };
