@@ -3,6 +3,7 @@ import * as bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
+  console.log({ request });
   const body = await request.json();
   console.log({ body });
   const user = await prisma.user.findFirst({
