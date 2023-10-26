@@ -22,17 +22,22 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/not-found.js"
     ],
-    "/[locale]/user/profile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/[locale]/user/profile/page.css",
-      "static/chunks/app/[locale]/user/profile/page.js"
-    ],
     "/[locale]/signIn/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/[locale]/signIn/page.css",
       "static/chunks/app/[locale]/signIn/page.js"
+    ],
+    "/[locale]/movies/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/movies/layout.js"
+    ],
+    "/[locale]/movies/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/[locale]/movies/[id]/page.css",
+      "static/chunks/app/[locale]/movies/[id]/page.js"
     ]
   }
 }
