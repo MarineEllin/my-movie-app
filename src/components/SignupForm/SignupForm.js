@@ -16,7 +16,6 @@ const SignupForm = () => {
   const router = useRouter();
   const locale = useCurrentLanguage();
   const dictionary = useCurrentDictionary(locale);
-  console.log(dictionary);
   const [errorCreatingAccount, setErrorCreatingAccount] = useState(false);
 
   const schema = yup.object().shape({

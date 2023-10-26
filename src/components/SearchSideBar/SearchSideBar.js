@@ -1,13 +1,11 @@
 "use client";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./SearchSideBar.module.scss";
 import { useRouter, usePathname } from "next/navigation";
 import { getDictionary } from "@/utils/dictionaries";
-import useCurrentLanguage from "@/hooks/useCurrentLanguage";
 
 const SearchSideBar = ({ locale }) => {
   const [dictionary, setDictionary] = useState();
-  console.log(dictionary);
   const router = useRouter();
   const pathname = usePathname();
   const handleSubmit = (e) => {

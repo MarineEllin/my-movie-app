@@ -10,8 +10,6 @@ const SimilarMovies = async ({ movieId, locale, user }) => {
     locale
   );
 
-  console.log(`user from similar ${user}`);
-
   return (
     <div className={styles.container}>
       <div className={styles.movies}>
