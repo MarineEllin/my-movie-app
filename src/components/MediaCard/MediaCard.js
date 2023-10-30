@@ -4,23 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Like from "../Like/Like";
 
-const MediaCard = async ({ media, locale, user }) => {
-  let movieLikesList = [];
-
-  if (user != null) {
-    const { movieLikes } = await prisma.user.findFirst({
-      where: { email: user.email },
-      include: {
-        movieLikes: true,
-      },
-    });
-    movieLikesList = movieLikes;
-  }
+const MediaCard = async ({ media, locale, movieLikesList }) => {
   return (
     <div className={styles.card}>
       <Link href={`/movies/${media.id}`}>
         <div className={styles.image}>
-          <Like mediaId={media.id} movieLikes={movieLikesList} />
+          <Like mediaId={media.id} movieLikesList={movieLikesList} />
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt={media.title}

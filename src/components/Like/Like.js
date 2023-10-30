@@ -6,11 +6,25 @@ import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const Like = ({ mediaId }) => {
+const Like = ({ mediaId, movieLikesList }) => {
   const router = useRouter();
   const [style, setStyle] = useState();
   const { data: session, status } = useSession();
-  const [movieLikes, setMovieLikes] = useState([]);
+  const [movieLikes, setMovieLikes] = useState(movieLikesList);
+
+  useEffect(() => {
+    if (status === "authenticated" && movieLikes === undefined) {
+      async function fetchMovieLikes() {
+        const res = await fetch(`/api/getMovieLikes`, {
+          method: "GET",
+        });
+
+        const movieLikesFromPrisma = await res.json();
+        setMovieLikes(movieLikesFromPrisma);
+      }
+      fetchMovieLikes();
+    }
+  }, [status]);
 
   const handleLikeClick = async (e) => {
     e.preventDefault();
@@ -38,21 +52,7 @@ const Like = ({ mediaId }) => {
   };
 
   useEffect(() => {
-    if (status === "authenticated") {
-      async function fetchMovieLikes() {
-        const res = await fetch(`/api/getMovieLikes`, {
-          method: "GET",
-        });
-
-        const movieLikesFromPrisma = await res.json();
-        setMovieLikes(movieLikesFromPrisma);
-      }
-      fetchMovieLikes();
-    }
-  }, [status]);
-
-  useEffect(() => {
-    if (status === "authenticated") {
+    if (status === "authenticated" && movieLikes !== undefined) {
       if (
         movieLikes.map((movie) => movie.movieId).includes(mediaId.toString())
       ) {

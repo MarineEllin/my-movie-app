@@ -4,6 +4,7 @@ import Image from "next/image";
 import MovieActors from "./MovieActors/MovieActors";
 import { getDictionary } from "@/utils/dictionaries";
 import Like from "../Like/Like";
+import { getServerSession } from "next-auth";
 
 const MovieDetails = async ({ movie, locale }) => {
   const dictionary = await getDictionary(locale);

@@ -1,0 +1,153 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/app/[locale]/movies/(search)/layout.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.layout_container__KXVAX {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 50px;
+}
+@media (max-width: 980px) {
+  .layout_container__KXVAX {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.layout_container__KXVAX .layout_content__WrFby {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+@media (max-width: 980px) {
+  .layout_container__KXVAX .layout_content__WrFby {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/SearchSideBar/CategoryTitle/CategoryTitle.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.CategoryTitle_categoryTitleContainer__RL5sn {
+  display: flex;
+  flex-direction: row;
+}
+.CategoryTitle_categoryTitleContainer__RL5sn h1 {
+  text-align: left;
+}
+@media (max-width: 980px) {
+  .CategoryTitle_categoryTitleContainer__RL5sn h1 {
+    text-align: center;
+  }
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/SearchSideBar/SearchSideBar.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.SearchSideBar_formContainer__VncbM {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 10px;
+  max-width: 250px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM {
+    max-width: 200px;
+  }
+}
+.SearchSideBar_formContainer__VncbM h2 {
+  margin: 0;
+  border-bottom: 1px solid #E6F3FD;
+  padding: 10px 20px;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM h2 {
+    padding: 5px 10px;
+  }
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_date__URs2b {
+  border-bottom: 1px solid #E6F3FD;
+  padding: 10px 20px;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM .SearchSideBar_date__URs2b {
+    padding: 5px 10px;
+  }
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_date__URs2b > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_date__URs2b > div p {
+  margin: 0;
+  margin-right: 10px;
+  font-weight: 300;
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_date__URs2b > div input {
+  border-radius: 10px;
+  border: 1px solid #E6F3FD;
+  padding: 10px;
+  font-family: var(--font-montserrat);
+  color: #99B3C6;
+  width: 150px;
+  font-weight: 300;
+  cursor: pointer;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM .SearchSideBar_date__URs2b > div input {
+    width: 100px;
+    font-size: 12px;
+  }
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_sort__r_Ncl {
+  border-bottom: 1px solid #E6F3FD;
+  padding: 10px 20px;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM .SearchSideBar_sort__r_Ncl {
+    padding: 5px 10px;
+  }
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_sort__r_Ncl select {
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #E6F3FD;
+  color: #99B3C6;
+  font-weight: 300;
+  cursor: pointer;
+  width: 100%;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM .SearchSideBar_sort__r_Ncl select {
+    font-size: 12px;
+  }
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_submitBtn__sfBvq {
+  padding: 20px 0;
+  border: 1px solid #E6F3FD;
+  background-color: #E6F3FD;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #393939;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.8s;
+  text-align: center;
+  font-family: var(--font-montserrat);
+}
+.SearchSideBar_formContainer__VncbM .SearchSideBar_submitBtn__sfBvq:hover {
+  background-color: #FFA071;
+  border: 1px solid #FFA071;
+  color: white;
+}
+@media (max-width: 980px) {
+  .SearchSideBar_formContainer__VncbM .SearchSideBar_submitBtn__sfBvq {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}

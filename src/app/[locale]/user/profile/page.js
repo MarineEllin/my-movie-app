@@ -37,7 +37,13 @@ const ProfilePage = async ({ params: { locale } }) => {
 
       <div className={styles.mediacardContainer}>
         {movies.map((movie) => (
-          <MediaCard key={movie.id} media={movie} locale={locale} user={user} />
+          <MediaCard
+            key={movie.id}
+            media={movie}
+            locale={locale}
+            user={user}
+            movieLikesList={movieLikes}
+          />
         ))}
       </div>
     </div>
