@@ -3,6 +3,7 @@ import MediaCard from "../MediaCard/MediaCard";
 import styles from "./Popular.module.scss";
 import { getDictionary } from "@/utils/dictionaries";
 import { getServerSession } from "next-auth";
+import prisma from "@/utils/prisma";
 
 const Popular = async ({ locale }) => {
   const { results } = await getMovieByPath("/discover/movie", [], locale);

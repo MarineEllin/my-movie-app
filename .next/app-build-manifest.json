@@ -6,12 +6,6 @@
       "static/css/app/[locale]/page.css",
       "static/chunks/app/[locale]/page.js"
     ],
-    "/[locale]/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/[locale]/layout.css",
-      "static/chunks/app/[locale]/layout.js"
-    ],
     "/[locale]/error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -22,11 +16,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[locale]/not-found.js"
     ],
-    "/[locale]/signIn/page": [
+    "/[locale]/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/[locale]/signIn/page.css",
-      "static/chunks/app/[locale]/signIn/page.js"
+      "static/css/app/[locale]/layout.css",
+      "static/chunks/app/[locale]/layout.js"
     ],
     "/[locale]/movies/layout": [
       "static/chunks/webpack.js",
@@ -45,17 +39,11 @@
       "static/css/app/[locale]/user/profile/page.css",
       "static/chunks/app/[locale]/user/profile/page.js"
     ],
-    "/[locale]/movies/(search)/layout": [
+    "/[locale]/signIn/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/[locale]/movies/(search)/layout.css",
-      "static/chunks/app/[locale]/movies/(search)/layout.js"
-    ],
-    "/[locale]/movies/(search)/genres/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/[locale]/movies/(search)/genres/[id]/page.css",
-      "static/chunks/app/[locale]/movies/(search)/genres/[id]/page.js"
+      "static/css/app/[locale]/signIn/page.css",
+      "static/chunks/app/[locale]/signIn/page.js"
     ]
   }
 }
